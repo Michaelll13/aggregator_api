@@ -21,7 +21,7 @@ async def fetch_parser_data(url: str, query: str):
         return {"results": [], "error": str(e)}
 
 
-@app.get("/search")
+@app.get("/searchAndAggregate")
 async def search_all(query: str = Query(...)):
     tasks = [fetch_parser_data(url, query) for url in PARSERS.values()]
     results = await asyncio.gather(*tasks)
