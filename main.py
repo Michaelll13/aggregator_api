@@ -13,7 +13,7 @@ PARSERS = {
 async def fetch_parser_data(url: str, query: str):
     try:
         async with httpx.AsyncClient(timeout=20.0) as client:
-            response = await client.get(url, params={"q": query})
+            response = await client.get(url, params={"query": query})
             response.raise_for_status()
             return response.json()
     except Exception as e:
