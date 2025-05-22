@@ -6,7 +6,7 @@ import asyncio
 app = FastAPI()
 
 PARSERS = {
-    "gorzdrav": "http://gorzdrav_parser:8000/search",
+    "gorzdrav": "http://gorzdrav-parser:8000/search",
     "zdravcity": "http://zdravcity-parser:8000/search"
 }
 
