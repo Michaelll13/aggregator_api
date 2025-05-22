@@ -24,7 +24,7 @@ async def fetch_parser_data(url: str, param_name: str, query: str):
             response.raise_for_status()
             return response.json()
     except Exception as e:
-        print(f"❌ Ошибка запроса к {url}: {e}")
+        print(f"❌ Ошибка запроса ккк {url}: {e}")
         return {"results": [], "error": str(e)}
 
 @app.get("/searchAndAggregate", summary="Общий поиск", tags=["Aggregator"])
