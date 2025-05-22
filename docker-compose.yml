@@ -1,28 +1,15 @@
 version: "3.9"
 
 services:
-  central-api:
+  aggregator-api:
     build: .
-    container_name: central-api
+    container_name: aggregator-api
     ports:
       - "8005:8000"
     restart: always
-    depends_on:
-      - gorzdrav-parser
-      - zdravcity-parser
     networks:
-      - parsers-network
-
-  gorzdrav-parser:
-    image: gorzdrav-parser:latest
-    networks:
-      - parsers-network
-
-  zdravcity-parser:
-    image: zdravcity-parser:latest
-    networks:
-      - parsers-network
+      - parser-network
 
 networks:
-  parsers-network:
-    driver: bridge
+  parser-network:
+    external: true
